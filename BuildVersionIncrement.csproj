@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{1CBE8F2E-7FFB-4D3E-9A59-D6D9D3C29EFE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>BuildVersionIncrement</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="Extensibility" />
+    <Reference Include="EnvDTE" />
+    <Reference Include="EnvDTE80" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Microsoft.VisualStudio.CommandBars" />
+    <Reference Include="stdole" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildVersionIncrement.Incrementors\BaseIncrementor.cs" />
+    <Compile Include="BuildVersionIncrement.Incrementors\BaseIncrementorConverter.cs" />
+    <Compile Include="BuildVersionIncrement.Incrementors\BuiltInBaseIncrementor.cs" />
+    <Compile Include="BuildVersionIncrement.Incrementors\IncrementContext.cs" />
+    <Compile Include="BuildVersionIncrement.Incrementors\IncrementorCollection.cs" />
+    <Compile Include="BuildVersionIncrement.Incrementors\VersionComponent.cs" />
+    <Compile Include="BuildVersionIncrement\AddInSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildVersionIncrement\BaseIncrementSettings.cs" />
+    <Compile Include="BuildVersionIncrement\BuildActionType.cs" />
+    <Compile Include="BuildVersionIncrement\BuildVersionIncrementor.cs" />
+    <Compile Include="BuildVersionIncrement\Common.cs" />
+    <Compile Include="BuildVersionIncrement\ConfigurationStringConverter.cs" />
+    <Compile Include="BuildVersionIncrement\Connect.cs" />
+    <Compile Include="BuildVersionIncrement\DateSpan.cs" />
+    <Compile Include="BuildVersionIncrement\GlobalAddinSettings.cs" />
+    <Compile Include="BuildVersionIncrement\GlobalIncrementSettings.cs" />
+    <Compile Include="BuildVersionIncrement\GlobalVariables.cs" />
+    <Compile Include="BuildVersionIncrement\IVersionIncrementerOld.cs" />
+    <Compile Include="BuildVersionIncrement\LanguageType.cs" />
+    <Compile Include="BuildVersionIncrement\Logger.cs" />
+    <Compile Include="BuildVersionIncrement\LogLevel.cs" />
+    <Compile Include="BuildVersionIncrement\OLD_BuildVersioningStyleType.cs" />
+    <Compile Include="BuildVersionIncrement\OLD_IncrementStyle.cs" />
+    <Compile Include="BuildVersionIncrement\Resources.cs" />
+    <Compile Include="BuildVersionIncrement\SolutionItem.cs" />
+    <Compile Include="BuildVersionIncrement\SolutionItemIncrementSettings.cs" />
+    <Compile Include="BuildVersionIncrement\SolutionItemType.cs" />
+    <Compile Include="BuildVersionIncrement\StandardVersionIncrementerOld.cs" />
+    <Compile Include="BuildVersionIncrement\StringVersion.cs" />
+    <Compile Include="BuildVersionIncrement\VersioningStyle.cs" />
+    <Compile Include="BuildVersionIncrement\WinWrapper.cs" />
+    <Compile Include="Etier.IconHelper\FolderType.cs" />
+    <Compile Include="Etier.IconHelper\IconListManager.cs" />
+    <Compile Include="Etier.IconHelper\IconReader.cs" />
+    <Compile Include="Etier.IconHelper\IconSize.cs" />
+    <Compile Include="Etier.IconHelper\Shell32.cs" />
+    <Compile Include="Etier.IconHelper\User32.cs" />
+    <Compile Include="Qreed.CodePlex\VersionChecker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Qreed.CodePlex\VersionCheckerEventArgs.cs" />
+    <Compile Include="Qreed.Reflection\EnumHelper.cs" />
+    <Compile Include="Qreed.Reflection\ReflectionHelper.cs" />
+    <Compile Include="Qreed.VisualStudio\IVSAddin.cs" />
+    <Compile Include="Qreed.VisualStudio\VSAddin.cs" />
+    <Compile Include="Qreed.VisualStudio\VSMenu.cs" />
+    <Compile Include="Qreed.VisualStudio\VSMenuCommand.cs" />
+    <Compile Include="Qreed.VisualStudio\VSMenuQueryStatusEventArgs.cs" />
+    <Compile Include="Qreed.Windows.Forms\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Qreed.Windows.Forms\ProgressDialogResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BuildVersionIncrement\AddInSettingsForm.resources" />
+    <EmbeddedResource Include="BuildVersionIncrement\CommandBar.resources" />
+    <EmbeddedResource Include="BuildVersionIncrement\Resources.resources" />
+    <EmbeddedResource Include="Qreed.CodePlex\VersionChecker.resources" />
+    <EmbeddedResource Include="Qreed.Windows.Forms\ProgressDialog.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
