@@ -78,6 +78,7 @@
     <Compile Include="Etier.IconHelper\IconSize.cs" />
     <Compile Include="Etier.IconHelper\Shell32.cs" />
     <Compile Include="Etier.IconHelper\User32.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Qreed.CodePlex\VersionChecker.cs">
       <SubType>Component</SubType>
     </Compile>
